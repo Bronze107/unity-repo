@@ -1,0 +1,5 @@
+id,key,module,zh-CN,en,ja,comment
+1001,ui_login,UI,登录,Login,ログイン,登录按钮
+1002,ui_cancel,UI,取消,Cancel,キャンセル,取消按钮
+1003,ui_mail_count,Mail,你有 {0} 封邮件,You have {0} mails,メールが {0} 件あります,邮件数量提示
+1004,error_network,Basic,网络异常,Network Error,ネットワークエラー,通用错误
