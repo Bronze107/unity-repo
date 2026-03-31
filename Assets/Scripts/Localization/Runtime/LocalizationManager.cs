@@ -62,7 +62,7 @@ namespace Game.Localization
             return $"#{id}";
         }
 
-        public string Format(int id, params object[] args)
+        public string FormatParams(int id, params object[] args)
         {
             var format = Get(id);
             if (args == null || args.Length == 0)
@@ -71,6 +71,71 @@ namespace Game.Localization
             }
 
             return string.Format(format, args);
+        }
+
+        public string Format<T1>(int id, T1 arg1)
+        {
+            return string.Format(Get(id), arg1);
+        }
+
+        public string Format<T1, T2>(int id, T1 arg1, T2 arg2)
+        {
+            return string.Format(Get(id), arg1, arg2);
+        }
+
+        public string Format<T1, T2, T3>(int id, T1 arg1, T2 arg2, T3 arg3)
+        {
+            return string.Format(Get(id), arg1, arg2, arg3);
+        }
+
+        public string FastFormat<T1>(int id, T1 arg1)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1);
+        }
+
+        public string FastFormat<T1, T2>(int id, T1 arg1, T2 arg2)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1, arg2);
+        }
+
+        public string FastFormat<T1, T2, T3>(int id, T1 arg1, T2 arg2, T3 arg3)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1, arg2, arg3);
+        }
+
+        public string FastFormat(int id, int arg1)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1);
+        }
+
+        public string FastFormat(int id, int arg1, int arg2)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1, arg2);
+        }
+
+        public string FastFormat(int id, int arg1, int arg2, int arg3)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1, arg2, arg3);
+        }
+
+        public string FastFormat(int id, float arg1)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1);
+        }
+
+        public string FastFormat(int id, float arg1, float arg2)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1, arg2);
+        }
+
+        public string FastFormat(int id, string arg1)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1);
+        }
+
+        public string FastFormat(int id, string arg1, string arg2)
+        {
+            return LocalizationFastFormatter.Format(Get(id), arg1, arg2);
         }
     }
 }
